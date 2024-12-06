@@ -13,11 +13,11 @@ body {
 .sidebar a:hover {
     color: white;
 }
-.main-content {
-    background: linear-gradient(to bottom right, #1db954, #121212); /* Gradient from Spotify Green to Black */
-    padding: 20px;
-    min-height: 100vh; /* Ensure the gradient covers the entire page */
-}
+    .main-content {
+        background: linear-gradient(to bottom right, #1db954, #121212); /* Gradient from Spotify Green to Black */
+        padding: 20px;
+        min-height: 100vh; /* Ensure the gradient covers the entire page */
+    }
 .playback-bar {
     background-color: #181818;
     color: white;
