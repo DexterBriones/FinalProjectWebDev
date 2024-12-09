@@ -15,11 +15,14 @@ body {
     width: 100%;
     max-width: 400px;
 }
-.header{
+.login-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+.btn-close {
+    margin-left: 10px;
 }
 
 .form-group{
