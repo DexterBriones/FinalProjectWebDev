@@ -163,3 +163,59 @@ document.getElementById('playPauseButton').addEventListener('click', togglePlay)
 
 // Initialize the audio player on page load
 initializePlayer();
+
+
+
+// Toggle heart button between outline and filled
+function toggleLike() {
+    const likeButton = document.getElementById("likeButton");
+    const songTitle = document.getElementById("nowPlayingTitle").innerText;
+    const songArtist = document.getElementById("nowPlayingArtist").innerText;
+    const songImage = document.getElementById("nowPlayingImage").src;
+
+    // Check if the song is already liked
+    let likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+
+    // If already liked, remove it, else add it
+    if (likedSongs.some(song => song.title === songTitle && song.artist === songArtist)) {
+        likedSongs = likedSongs.filter(song => song.title !== songTitle || song.artist !== songArtist);
+        likeButton.innerHTML = "♡"; // Unliked (empty heart)
+    } else {
+        likedSongs.push({ title: songTitle, artist: songArtist, image: songImage });
+        likeButton.innerHTML = "❤️"; // Liked (filled heart)
+    }
+
+    // Save updated liked songs list to localStorage
+    localStorage.setItem("likedSongs", JSON.stringify(likedSongs));
+}
+
+// Play song function to update now playing information
+function playSong(songPath, title, artist, imagePath) {
+    const audioPlayer = document.getElementById("audioPlayer");
+    const nowPlayingTitle = document.getElementById("nowPlayingTitle");
+    const nowPlayingArtist = document.getElementById("nowPlayingArtist");
+    const nowPlayingImage = document.getElementById("nowPlayingImage");
+
+    audioPlayer.src = songPath;
+    nowPlayingTitle.innerText = title;
+    nowPlayingArtist.innerText = artist;
+    nowPlayingImage.src = imagePath;
+    
+    // Reset the like button to empty heart
+    const likeButton = document.getElementById("likeButton");
+    likeButton.innerHTML = "♡";
+}
+
+// Example of playback control for play/pause
+function togglePlay() {
+    const audioPlayer = document.getElementById("audioPlayer");
+    const playPauseButton = document.getElementById("playPauseButton");
+
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.innerHTML = "⏸"; // Pause icon
+    } else {
+        audioPlayer.pause();
+        playPauseButton.innerHTML = "▶"; // Play icon
+    }
+}
