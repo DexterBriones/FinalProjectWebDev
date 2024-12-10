@@ -3,33 +3,33 @@ const songs = [
     { 
         title: 'Chanel', 
         artist: 'Frank Ocean', 
-        src: '/songs/Chanel - Frank Ocean.mp3', 
-        img: '/images/frank.jpg', // Song cover image
-        rightContentImg: '/images/frankabout.jpg', // Image for the right content
+        src: './songs/Chanel - Frank Ocean.mp3', 
+        img: './images/frank.jpg', // Song cover image
+        rightContentImg: './images/frankabout.jpg', // Image for the right content
         bio: 'Frank Ocean is an American singer, songwriter, and record producer known for his unique style and contribution to contemporary music.' 
     },
     { 
         title: 'Count Me Out', 
         artist: 'Kendrick Lamar', 
-        src: '/songs/Kendrick Lamar - Count Me Out.mp3', 
-        img: '/images/mr.morale.jpg', // Song cover image
-        rightContentImg: '/images/kendrickabout.webp', // Image for the right content
+        src: './songs/Kendrick Lamar - Count Me Out.mp3', 
+        img: './images/mr.morale.jpg', // Song cover image
+        rightContentImg: './images/kendrickabout.webp', // Image for the right content
         bio: 'Kendrick Lamar is an American rapper, songwriter, and record producer, recognized for his introspective and socially aware lyricism.' 
     },
     { 
         title: 'One Call', 
         artist: 'Rich Amiri', 
-        src: '/songs/Rich Amiri - One Call.mp3', 
-        img: '/images/onecall.jpg', // Song cover
-        rightContentImg: '/images/richabout.jpg', // Image for the right content
+        src: './songs/Rich Amiri - One Call.mp3', 
+        img: './images/onecall.jpg', // Song cover
+        rightContentImg: './images/richabout.jpg', // Image for the right content
         bio: 'Rich Amiri is an American rapper and music artist known for his contributions to the underground hip-hop scene. He gained recognition with his unique style and music, often blending elements of trap and cloud rap.' 
     },
     { 
         title: 'Ryd', 
         artist: 'Steve Lacy', 
-        src: '/songs/Ryd.mp3', 
-        img: '/images/rydcover.jpg', // Song cover
-        rightContentImg: '/images/steveabout.jpg', // Image for the right content
+        src: './songs/Ryd.mp3', 
+        img: './images/rydcover.jpg', // Song cover
+        rightContentImg: './images/steveabout.jpg', // Image for the right content
         bio: 'Steve Lacy is an American musician, singer, and producer, best known as the guitarist of The Internet and for his solo work blending R&B, funk, and soul.' 
     }
 ];
