@@ -111,8 +111,7 @@
                                 <h6 class="card-title">Chanel</h6>
                                 <p class="card-text">Frank Ocean</p>
                                 <!-- Play Button -->
-                                <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('./songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', './images/frank.jpg')">Play</button>
+                                <button id="playButton" class="btn btn-success btn-sm" onclick="playSong('./songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', './images/frank.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
@@ -193,26 +192,23 @@
                     <!-- Volume Control -->
                     <div class="d-flex align-items-center">
                         <button class="btn btn-dark me-2">🔊</button>
-                        <input type="range" class="form-range" style="width: 100px;"
-                            onchange="changeVolume(this.value)">
+                        <input id="volumeSlider" type="range" class="form-range" style="width: 100px;" min="0" max="100" value="50">
                     </div>
                 </div>
             </div>
 
             <!-- Audio Player Element -->
-            <audio id="audioPlayer" src="./songs/Chanel - Frank Ocean.mp3" ontimeupdate="updateScrubber()"></audio>
+            <audio id="audioPlayer" src="./songs/Chanel - Frank Ocean.mp3"></audio>
 
-            <!-- Right Content (Artist and Album Info) -->
-            <div class="col-lg-2 col-md-3 col-sm-4 right-content">
-                <div class="d-flex flex-column align-items-center">
-                    <!-- The album art and text will be updated dynamically -->
-                    <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
-                    <h6 id="artistName">Play a Song!</h6>
-                    <p id="artistBio" class="text">
-                    </p>
-                </div>
-            </div>
-
+<!-- Right Content (Artist and Album Info) -->
+<div class="col-lg-2 col-md-3 col-sm-4 right-content">
+    <div class="d-flex flex-column align-items-center">
+        <!-- The album art and text will be updated dynamically -->
+        <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
+        <h6 id="artistName">Play a Song!</h6>
+        <p id="artistBio" class="text">Learn more about the artist...</p>
+    </div>
+</div>
 
 
             <script src="script.js"></script>

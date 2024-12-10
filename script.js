@@ -163,9 +163,6 @@ document.getElementById('playPauseButton').addEventListener('click', togglePlay)
 
 // Initialize the audio player on page load
 initializePlayer();
-
-
-
 // Toggle heart button between outline and filled
 function toggleLike() {
     const likeButton = document.getElementById("likeButton");
@@ -189,33 +186,11 @@ function toggleLike() {
     localStorage.setItem("likedSongs", JSON.stringify(likedSongs));
 }
 
-// Play song function to update now playing information
-function playSong(songPath, title, artist, imagePath) {
-    const audioPlayer = document.getElementById("audioPlayer");
-    const nowPlayingTitle = document.getElementById("nowPlayingTitle");
-    const nowPlayingArtist = document.getElementById("nowPlayingArtist");
-    const nowPlayingImage = document.getElementById("nowPlayingImage");
-
-    audioPlayer.src = songPath;
-    nowPlayingTitle.innerText = title;
-    nowPlayingArtist.innerText = artist;
-    nowPlayingImage.src = imagePath;
-    
+ 
     // Reset the like button to empty heart
     const likeButton = document.getElementById("likeButton");
     likeButton.innerHTML = "♡";
-}
+    
 
-// Example of playback control for play/pause
-function togglePlay() {
-    const audioPlayer = document.getElementById("audioPlayer");
-    const playPauseButton = document.getElementById("playPauseButton");
 
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseButton.innerHTML = "⏸"; // Pause icon
-    } else {
-        audioPlayer.pause();
-        playPauseButton.innerHTML = "▶"; // Play icon
-    }
-}
+
