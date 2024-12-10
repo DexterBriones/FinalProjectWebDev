@@ -30,7 +30,7 @@ const songs = [
         src: '/songs/Ryd.mp3', 
         img: '/images/rydcover.jpg', // Song cover
         rightContentImg: '/images/steveabout.jpg', // Image for the right content
-        bio: 'Artist bio goes here.' 
+        bio: 'Steve Lacy is an American musician, singer, and producer, best known as the guitarist of The Internet and for his solo work blending R&B, funk, and soul.' 
     }
 ];
 
