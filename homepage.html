@@ -57,15 +57,17 @@
                         <a class="nav-link" href="#">Browse</a>
                     </li>
                 </ul>
-                <!-- Sign Up and Login -->
-                <div class="d-flex">
-                    <a class="btn btn-outline-light me-2" href="#">Sign Up</a>
-                    <a id="loginButton" class="btn btn-light" href="login.html">Login</a>
+                <!-- Account Dropdown -->
+                <div class="dropdown"> <button class="btn btn-light dropdown-toggle" type="button" id="accountDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="index.html" id="logoutButton">Log Out</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
-
 
     <div class="container-fluid">
         <div class="row">
@@ -111,8 +113,7 @@
                                 <h6 class="card-title">Chanel</h6>
                                 <p class="card-text">Frank Ocean</p>
                                 <!-- Play Button -->
-                                <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('/songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', '/images/frank.jpg')">Play</button>
+                            </p> <button class="btn btn-success btn-sm" onclick="playSong('/songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', '/images/frank.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
@@ -212,10 +213,7 @@
                     </p>
                 </div>
             </div>
-
-
-
             <script src="script.js"></script>
-            <script src="login.js"></script>
+            <script src="login.js"></script> <!-- Include the login script here -->
 </body>
 </html>
