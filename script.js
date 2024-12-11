@@ -161,6 +161,16 @@ document.getElementById('prevButton').addEventListener('click', prevSong);
 // Event listener for Play/Pause button
 document.getElementById('playPauseButton').addEventListener('click', togglePlay);
 
+// Event listener for scrubber updates
+audioPlayer.addEventListener('timeupdate', updateScrubber);
+
+// Event listener for scrubber seeking
+scrubber.addEventListener('input', seekAudio);
+
+// Event listener for volume changes
+const volumeControl = document.getElementById('volumeControl'); // Assuming an input range with id="volumeControl"
+volumeControl.addEventListener('input', changeVolume);
+
 // Initialize the audio player on page load
 initializePlayer();
 // Toggle heart button between outline and filled

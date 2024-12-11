@@ -189,13 +189,13 @@
                         <input id="musicScrubber" type="range" class="form-range mt-2" min="0" max="100" value="0"
                             style="width: 300px;" oninput="seekAudio(this.value)">
                     </div>
-                    <!-- Volume Control -->
-                    <div class="d-flex align-items-center">
-                        <button class="btn btn-dark me-2">🔊</button>
-                        <input id="volumeSlider" type="range" class="form-range" style="width: 100px;" min="0" max="100" value="50">
-                    </div>
-                </div>
-            </div>
+        <!-- Volume Control -->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-dark me-2">🔊</button>
+            <input type="range" class="form-range" style="width: 100px;" onchange="changeVolume(this.value)">
+        </div>
+    </div>
+</div>
 
             <!-- Audio Player Element -->
             <audio id="audioPlayer" src="./songs/Chanel - Frank Ocean.mp3"></audio>
@@ -206,7 +206,7 @@
         <!-- The album art and text will be updated dynamically -->
         <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
         <h6 id="artistName">Play a Song!</h6>
-        <p id="artistBio" class="text">Learn more about the artist...</p>
+        <p id="artistBio" class="text"></p>
     </div>
 </div>
 
