@@ -52,17 +52,11 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
         alert("Please enter a valid 11-digit phone number.");
         return;
     }
-
-    // Simulate account creation (you can send the data to your server here)
-    alert("Account successfully created!");
-
-    // Redirect to login page after a short delay
-    setTimeout(function () {
-        window.location.href = "login.html";  // Redirect to login page
-    }, 1000);  // 1-second delay to show the alert
 });
 
 function loginwebsite() {
-    alert("You been Login");
-    window.location.href = 'login.html';
+    alert("You have been logged in!");
+    setTimeout(function () {
+        window.location.href = 'login.html';  // Redirect to login.html
+    }, 1000);  // 1-second delay to allow the alert to show
 }
