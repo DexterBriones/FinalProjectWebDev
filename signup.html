@@ -37,7 +37,7 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" maxlength="20" required>
                     </div>
-                    <a href="login.html"><button class="btn transparent" id="sign-up-btn">Sign-Up</button></a>
+                    <button class="btn transparent" id="sign-up-btn" onclick="loginwebsite">Sign-Up</button>
                     <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -78,6 +78,11 @@
     </form>
 
     <script src="signup.js" defer></script>
+    <script>
+        function loginwebsite() {
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 
 </html>
