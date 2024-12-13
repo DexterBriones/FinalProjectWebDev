@@ -26,7 +26,7 @@ phoneInput.addEventListener('input', (e) => {
 });
 
 document.getElementById('signupForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault();  // Prevent the form from submitting normally
 
     let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
@@ -53,6 +53,12 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
         return;
     }
 
-    // Here you can send the data to the backend (e.g., via AJAX or fetch)
+    // Simulate account creation (you can send the data to your server here)
     alert("Account successfully created!");
+
+    // Redirect to login page after a short delay
+    setTimeout(function () {
+        window.location.href = "login.html";  // Redirect to login page
+    }, 1000);  // 1-second delay to show the alert
 });
+

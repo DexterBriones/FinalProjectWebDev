@@ -216,6 +216,7 @@ form.sign-up-form {
     height: 41px;
     font-weight: 600;
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .image {
