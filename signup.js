@@ -16,7 +16,6 @@ const errorMessage = document.querySelector('.error-message');
 phoneInput.addEventListener('input', (e) => {
     const value = e.target.value;
 
-    // Check if the value contains non-numeric characters
     if (/[^0-9]/.test(value)) {
         errorMessage.textContent = 'Please enter only numbers.';
         errorMessage.style.display = 'block';
@@ -25,4 +24,3 @@ phoneInput.addEventListener('input', (e) => {
         errorMessage.style.display = 'none';
     }
 });
-
