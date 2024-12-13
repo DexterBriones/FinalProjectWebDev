@@ -29,7 +29,7 @@
                     <div class="input-field">
                         <i class="fas fa-phone"></i>
                         <input type="tel" id="phone" placeholder="Phone No." maxlength="11" pattern="[0-9]{11}"
-                            inputmode="numeric" oninput="validatePhone()" required />
+                            inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
                         <small class="error-message"></small>
                     </div>
 
@@ -37,20 +37,19 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" maxlength="20" required>
                     </div>
-                    <button class="btn" id="sign-up-btn" onclick="loginwebsite()">Sign-Up</button>
+                    <button class="btn transparent" id="sign-up-btn" onclick="loginwebsite">Sign-Up</button>
                     <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
-                        <a href="https://www.facebook.com/login" class="social-icon" target="_blank">
-                            <i class="fab fa-facebook"></i>
+                        <a href="#" class="social-icon">
+                            <i class="fa brands fa-facebook"></i>
                         </a>
-                        <a href="https://accounts.google.com/ServiceLogin" class="social-icon" target="_blank">
+                        <a href="#" class="social-icon">
                             <i class="fab fa-google"></i>
                         </a>
-                        <a href="https://appleid.apple.com/signin" class="social-icon" target="_blank">
+                        <a href="#" class="social-icon">
                             <i class="fab fa-apple"></i>
                         </a>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -70,15 +69,20 @@
         </div>
     </div>
 
+    <form id="signupForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="phone" placeholder="Phone" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Sign-Up" class="btn solid">
+    </form>
+
     <script src="signup.js" defer></script>
     <script>
         function loginwebsite() {
-            alert("You have been logged in!");
-            setTimeout(function () {
-                window.location.href = 'login.html';  // Redirect to login.html
-            },);
+            alert("You been Login");
+            window.location.href = 'login.html';
         }
-
     </script>
 </body>
 

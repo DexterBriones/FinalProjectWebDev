@@ -274,3 +274,79 @@ form.sign-up-form {
     font-style: italic;
     color: black;
 }
+
+@media screen and (max-width: 768px) {
+
+    /* Stack form and panel vertically for mobile */
+    .container {
+        display: flex;
+        flex-direction: column;
+        /* Arrange elements vertically */
+        align-items: center;
+    }
+
+    .forms-container {
+        order: 1;
+        /* Ensure the form is on top */
+        width: 90%;
+        /* Center form and make it responsive */
+        margin: 0 auto;
+    }
+
+    .panels-container {
+        order: 2;
+        /* Move the panel below the form */
+        width: 100%;
+        /* Full width for the panel */
+        margin-top: 1rem;
+        /* Add spacing above the panel */
+        text-align: center;
+    }
+
+    .panel {
+        padding: 1rem;
+        width: 90%;
+        /* Keep panel centered and responsive */
+        margin: 0 auto;
+    }
+
+    .panel .content {
+        text-align: center;
+        /* Center content inside the panel */
+        padding: 0.5rem;
+    }
+
+    .logo {
+        width: 60px;
+        /* Resize logo for mobile */
+        height: 60px;
+    }
+
+    .btn {
+        width: 100%;
+        /* Full-width button for better usability */
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /* Further adjustments for small mobile screens */
+    .panel {
+        padding: 0.5rem;
+    }
+
+    .btn {
+        height: 40px;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        width: 50px;
+        /* Adjust logo for very small screens */
+        height: 50px;
+    }
+}
