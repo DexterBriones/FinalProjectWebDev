@@ -1,0 +1,75 @@
+HTML code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sign-Up Form</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://kit.fontawesome.com/5bf1b3a7b3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="" class="sign-in-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" placeholder="Phone No." inputmode="numeric" pattern="\d*"
+                            maxlength="11" oninput="validatePhoneNumber(this)">
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <input type="submit" value="Sign-Up" class="btn solid">
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fa brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-apple"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <div class="logo-placeholder">
+                    <img src="https://img.freepik.com/premium-vector/simple-music-logo-design-concept-vector_9850-3767.jpg"
+                        alt="Melodia Logo" class="logo">
+                </div>
+                <h3>Hey there, welcome to Spotify! 🎵</h3>
+                <h2>Hello</h2>
+                <p> Your next favorite song is just a click away. Sign up to explore playlists, discover fresh tracks,
+                    and let the music bring your world to life. Let’s get started!</p>
+                <button class="btn transparent" id="sign-up-btn">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>
