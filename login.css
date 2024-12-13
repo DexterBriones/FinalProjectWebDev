@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 body {
-    background-color: #A4C3B2;
+    background: linear-gradient(135deg, #1db954,#145c2b);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ body {
     background-color: #A4C3B2;
 }
 .signup-panel {
-    background-color: #CCE3DE;
+    background-color: #F6FFF8;
     text-align: center;
 }
 
