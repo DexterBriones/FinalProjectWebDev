@@ -54,9 +54,3 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
     }
 });
 
-function loginwebsite() {
-    alert("You have been logged in!");
-    setTimeout(function () {
-        window.location.href = 'login.html';  // Redirect to login.html
-    }, 1000);  // 1-second delay to allow the alert to show
-}
