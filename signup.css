@@ -280,78 +280,145 @@ form.sign-up-form {
     color: black;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1200px) {
 
-    /* Stack form and panel vertically for mobile */
+    /* Extra large devices (desktops) */
     .container {
-        display: flex;
-        flex-direction: column;
-        /* Arrange elements vertically */
-        align-items: center;
+        padding: 2rem;
     }
 
-    .forms-container {
-        order: 1;
-        /* Ensure the form is on top */
-        width: 90%;
-        /* Center form and make it responsive */
-        margin: 0 auto;
+    .title {
+        font-size: 2rem;
     }
 
-    .panels-container {
-        order: 2;
-        /* Move the panel below the form */
-        width: 100%;
-        /* Full width for the panel */
-        margin-top: 1rem;
-        /* Add spacing above the panel */
-        text-align: center;
-    }
-
-    .panel {
-        padding: 1rem;
-        width: 90%;
-        /* Keep panel centered and responsive */
-        margin: 0 auto;
-    }
-
-    .panel .content {
-        text-align: center;
-        /* Center content inside the panel */
-        padding: 0.5rem;
-    }
-
-    .logo {
-        width: 60px;
-        /* Resize logo for mobile */
+    .input-field {
+        width: 50%;
         height: 60px;
     }
 
     .btn {
-        width: 100%;
-        /* Full-width button for better usability */
+        width: 180px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    /* Large devices (tablets) */
+    .container {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .input-field {
+        width: 60%;
+        height: 55px;
+    }
+
+    .btn {
+        width: 160px;
         height: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Medium devices (landscape tablets, smaller screens) */
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .input-field {
+        width: 80%;
+        height: 50px;
+    }
+
+    .btn {
+        width: 140px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logo-placeholder {
+        margin-bottom: 0.5rem;
+        /* Reduce spacing for smaller devices */
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media screen and (max-width: 576px) {
 
-    /* Further adjustments for small mobile screens */
-    .panel {
+    /* Small devices (phones) */
+    .container {
         padding: 0.5rem;
-    }
-
-    .btn {
-        height: 40px;
     }
 
     .title {
         font-size: 1.4rem;
     }
 
+    .input-field {
+        width: 90%;
+        height: 45px;
+    }
+
+    .btn {
+        width: 120px;
+        height: 35px;
+    }
+
+    .panels-container {
+        grid-template-columns: 1fr;
+        /* Panels stack vertically */
+    }
+
+    .panel {
+        padding: 1rem;
+        /* Smaller padding */
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .right-panel .content,
+    .right-panel .image {
+        transform: translateX(50%);
+    }
+
+    .left-panel .content,
+    .left-panel .image {
+        transform: translateX(-50%);
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .input-field {
+        width: 95%;
+        height: 40px;
+    }
+
+    .btn {
+        width: 100px;
+        height: 30px;
+    }
+
     .logo {
-        width: 50px;
-        /* Adjust logo for very small screens */
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 }

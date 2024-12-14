@@ -10,89 +10,90 @@
 </head>
 
 <body>
-    <div class="container">
 
+    <div class="forms-container col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 ">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    <input type="text" placeholder="Username" maxlength="15" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    <input type="email" id="email" placeholder="Email" maxlength="40" required />
+                    <small class="error-message" style="color: red; display: none;"></small>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-phone col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    <input type="tel" id="phone" placeholder="Phone No." maxlength="11" pattern="[0-9]{11}"
+                        inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                    <small class="error-message"></small>
+                </div>
 
-        <div class="forms-container">
-            <div class="signin-signup">
-                <form action="" class="sign-in-form">
-                    <h2 class="title">Sign up</h2>
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" maxlength="15" required>
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" id="email" placeholder="Email" maxlength="40" required />
-                        <small class="error-message" style="color: red; display: none;"></small>
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-phone"></i>
-                        <input type="tel" id="phone" placeholder="Phone No." maxlength="11" pattern="[0-9]{11}"
-                            inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
-                        <small class="error-message"></small>
-                    </div>
+                <div class="input-field">
+                    <i class="fas fa-lock col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    <input type="password" placeholder="Password" maxlength="20" required>
+                </div>
+                <button class="btn transparent col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10" id="sign-up-btn"
+                    target="_blank" rel="noopener noreferrer" onclick="loginwebsite()">Sign-Up</button>
+                <script>
+                    function loginwebsite() {
+                        const isAccountCreated = confirm("Have you completed creating your account?");
 
-                    <div class="input-field">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" maxlength="20" required>
-                    </div>
-                    <button class="btn transparent" id="sign-up-btn" target="_blank" rel="noopener noreferrer"
-                        onclick="loginwebsite()">Sign-Up</button>
-                    <script>
-                        function loginwebsite() {
-                            const isAccountCreated = confirm("Have you completed creating your account?");
-
-                            if (isAccountCreated) {
-                                alert("Successfully created an Account!");
-                                setTimeout(() => {
-                                    window.location.href = "login.html";
-                                }, 2000);
-                            } else {
-                                alert("Please create an account before proceeding to the login page.");
-                            }
-                        }
-                    </script>
-
-                    <p class="social-text">Or Sign up with social platforms</p>
-                    <div class="social-media">
-                        <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer"
-                            onclick="redirectToLogin()">
-                            <i class="fa brands fa-facebook"></i>
-                        </a>
-                        <a href="https://accounts.google.com" class="social-icon" target="_blank"
-                            rel="noopener noreferrer" onclick="redirectToLogin()">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="https://www.apple.com" class="social-icon" target="_blank" rel="noopener noreferrer"
-                            onclick="redirectToLogin()">
-                            <i class="fab fa-apple"></i>
-                        </a>
-                    </div>
-
-                    <script>
-                        function redirectToLogin() {
+                        if (isAccountCreated) {
+                            alert("Successfully created an Account!");
                             setTimeout(() => {
                                 window.location.href = "login.html";
-                            }, 2000);
+                            });
+                        } else {
+                            alert("Please create an account before proceeding to the login page.");
                         }
-                    </script>
+                    }
+                </script>
 
-                </form>
-            </div>
+                <p class="social-text col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 ">Or Sign up with social platforms
+                </p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        onclick="redirectToLogin()">
+                        <i class="fa brands fa-facebook col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    </a>
+                    <a href="https://accounts.google.com" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        onclick="redirectToLogin()">
+                        <i class="fab fa-google col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    </a>
+                    <a href="https://www.apple.com" class="social-icon" target="_blank" rel="noopener noreferrer"
+                        onclick="redirectToLogin()">
+                        <i class="fab fa-apple col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "></i>
+                    </a>
+                </div>
+
+                <script>
+                    function redirectToLogin() {
+                        setTimeout(() => {
+                            window.location.href = "login.html";
+                        }, 2000);
+                    }
+                </script>
+
+            </form>
         </div>
     </div>
+    </div>
     <div class="panels-container">
-        <div class="panel left-panel">
+        <div class="panel left-panel col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 ">
             <div class="content">
-                <div class="logo-placeholder">
+                <div
+                    class="logo- col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 placeholder col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 ">
                     <img src="https://e7.pngegg.com/pngimages/158/639/png-clipart-spotify-streaming-media-logo-playlist-spotify-app-icon-logo-music-download.png"
                         alt="Melodia Logo" class="logo">
                 </div>
                 <h3>Hey there, welcome to Spotify! 🎵</h3>
                 <p> Your next favorite song is just a click away. Sign up to explore playlists, discover fresh tracks,
                     and let the music bring your world to life. Let’s get started!</p>
-                <a href="login.html"><button class="btn transparent" id="sign-up-btn">Login</button></a>
+                <a href="login.html"><button class="btn transparent col-xxxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-10 "
+                        id="sign-up-btn">Login</button></a>
                 <p>Already have an account? Click 'Login' to start listening to your favorite tunes</p>
             </div>
         </div>
