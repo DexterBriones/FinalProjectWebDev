@@ -262,3 +262,32 @@ function playSong(src, title, artist, img) {
     const isLiked = likedSongs.some(song => song.title === title && song.artist === artist);
     document.getElementById("likeButton").textContent = isLiked ? "♥" : "♡";
 }
+
+function loadLikedSongs() {
+    const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    const container = document.getElementById("likedSongsContainer");
+
+    // Clear the container to avoid duplication
+    container.innerHTML = "";
+
+    if (likedSongs.length === 0) {
+        container.innerHTML = '<p class="text-white">No liked songs yet!</p>';
+        return;
+    }
+
+    likedSongs.forEach(song => {
+        const songCard = `
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card bg-dark text-white">
+                    <img src="${song.img}" class="card-img-top" alt="${song.title}">
+                    <div class="card-body">
+                        <h6 class="card-title">${song.title}</h6>
+                        <p class="card-text">${song.artist}</p>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromLikedSongs('${song.title}'); loadLikedSongs();">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += songCard;
+    });
+}
