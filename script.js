@@ -173,34 +173,121 @@ volumeControl.addEventListener('input', changeVolume);
 
 // Initialize the audio player on page load
 initializePlayer();
-// Toggle heart button between outline and filled
+
+
+
+
+
+
+
+// Add a song to liked songs in localStorage
+function addToLikedSongs(song) {
+    let likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    // Check if the song is already liked
+    if (!likedSongs.some(s => s.title === song.title && s.artist === song.artist)) {
+        likedSongs.push(song);
+        localStorage.setItem("likedSongs", JSON.stringify(likedSongs));
+    }
+}
+// Remove a song from liked songs in localStorage
+function removeFromLikedSongs(songTitle) {
+    let likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    likedSongs = likedSongs.filter(song => song.title !== songTitle);
+    localStorage.setItem("likedSongs", JSON.stringify(likedSongs));
+}
+
+// Load liked songs for the Liked Songs page
+function loadLikedSongs() {
+    const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    const container = document.getElementById("likedSongsContainer");
+
+    if (likedSongs.length === 0) {
+        container.innerHTML = '<p class="text-white">No liked songs yet!</p>';
+        return;
+    }
+
+    likedSongs.forEach(song => {
+        const songCard = `
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card bg-dark text-white">
+                    <img src="${song.img}" class="card-img-top" alt="${song.title}">
+                    <div class="card-body">
+                        <h6 class="card-title">${song.title}</h6>
+                        <p class="card-text">${song.artist}</p>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromLikedSongs('${song.title}'); loadLikedSongs();">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += songCard;
+    });
+}
 function toggleLike() {
     const likeButton = document.getElementById("likeButton");
     const songTitle = document.getElementById("nowPlayingTitle").innerText;
     const songArtist = document.getElementById("nowPlayingArtist").innerText;
     const songImage = document.getElementById("nowPlayingImage").src;
 
-    // Check if the song is already liked
     let likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    const song = {
+        title: songTitle,
+        artist: songArtist,
+        img: songImage
+    };
 
-    // If already liked, remove it, else add it
-    if (likedSongs.some(song => song.title === songTitle && song.artist === songArtist)) {
-        likedSongs = likedSongs.filter(song => song.title !== songTitle || song.artist !== songArtist);
-        likeButton.innerHTML = "♡"; // Unliked (empty heart)
+    // Check if the song is already liked
+    const isLiked = likedSongs.some(s => s.title === song.title && s.artist === song.artist);
+
+    if (isLiked) {
+        // Remove from liked songs
+        removeFromLikedSongs(songTitle);
+        likeButton.textContent = "♡"; // Update button to unlike
     } else {
-        likedSongs.push({ title: songTitle, artist: songArtist, image: songImage });
-        likeButton.innerHTML = "❤️"; // Liked (filled heart)
+        // Add to liked songs
+        addToLikedSongs(song);
+        likeButton.textContent = "♥"; // Update button to liked
     }
+}
+function playSong(src, title, artist, img) {
+    audioPlayer.src = src;
+    audioPlayer.play();
+    document.getElementById('playPauseButton').textContent = '⏸';
 
-    // Save updated liked songs list to localStorage
-    localStorage.setItem("likedSongs", JSON.stringify(likedSongs));
+    const songIndex = songs.findIndex(song => song.title === title && song.artist === artist);
+
+    updateNowPlayingInfo(songIndex);
+
+    // Update like button state
+    const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    const isLiked = likedSongs.some(song => song.title === title && song.artist === artist);
+    document.getElementById("likeButton").textContent = isLiked ? "♥" : "♡";
 }
 
- 
-    // Reset the like button to empty heart
-    const likeButton = document.getElementById("likeButton");
-    likeButton.innerHTML = "♡";
-    
+function loadLikedSongs() {
+    const likedSongs = JSON.parse(localStorage.getItem("likedSongs")) || [];
+    const container = document.getElementById("likedSongsContainer");
 
+    // Clear the container to avoid duplication
+    container.innerHTML = "";
 
+    if (likedSongs.length === 0) {
+        container.innerHTML = '<p class="text-white">No liked songs yet!</p>';
+        return;
+    }
 
+    likedSongs.forEach(song => {
+        const songCard = `
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card bg-dark text-white">
+                    <img src="${song.img}" class="card-img-top" alt="${song.title}">
+                    <div class="card-body">
+                        <h6 class="card-title">${song.title}</h6>
+                        <p class="card-text">${song.artist}</p>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromLikedSongs('${song.title}'); loadLikedSongs();">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += songCard;
+    });
+}

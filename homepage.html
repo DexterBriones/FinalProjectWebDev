@@ -11,7 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="/images/spotifylogotab.png">
+    <link rel="icon" type="image/png" href="./images/spotifylogotab.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,7 +30,7 @@
         <div class="container-fluid">
             <!-- Spotify Logo -->
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="/images/spotifylogotab.png" alt="Spotify Logo" height="40" class="me-5">
+                <img src="./images/spotifylogotab.png" alt="Spotify Logo" height="40" class="me-5">
             </a>
 
             <!-- Toggle Button for Mobile View -->
@@ -73,23 +73,18 @@
         <div class="row">
             <!-- Sidebar -->
             <div class="col-lg-2 col-md-3 col-sm-4 sidebar d-flex flex-column p-3">
-                <h5>Your Library</h5>
-                <a href="#" class="mt-2">Playlists</a>
-                <a href="#" class="mt-2">Albums</a>
-                <a href="#" class="mt-2">Artists</a>
-                <hr class="bg-secondary">
-                <h6>Recents</h6>
+                <h5>Recents</h5>
                 <ul class="list-unstyled">
                     <li class="mt-2">
                         <a href="likedsongs.html">
-                            <img src="/path/to/image1.jpg" alt="Playlist" width="30" class="me-2">
+                            <img src="./images/likedsongspicture.jpg" alt="Playlist" width="30" class="me-2">
                             Liked Songs
                         </a>
                     </li>
                     <li class="mt-2">
-                        <a href="#">
-                            <img src="/path/to/image2.jpg" alt="Artist" width="30" class="me-2">
-                            Kalye
+                        <a href="homepage.html">
+                            <img src="./images/homeicon.png" alt="Artist" width="30" class="me-2">
+                            Recommended For You
                         </a>
                     </li>
                 </ul>
@@ -97,56 +92,50 @@
 
             <!-- Main Content -->
             <div class="col-lg-8 col-md-6 col-sm-8 main-content">
-                <h5 class="mt-4">Categories</h5>
-                <div class="d-flex">
-                    <button class="btn btn-outline-light me-2">All</button>
-                    <button class="btn btn-outline-light me-2">Music</button>
-                    <button class="btn btn-outline-light me-2">Podcasts</button>
-                </div>
                 <!-- New Section for Songs -->
-                <h5 class="mt-4">Your Songs</h5>
+                <h5 class="mt-4">Recommended for you</h5>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card bg-dark text-white">
-                            <img src="/images/frank.jpg" class="card-img-top" alt="Song 1">
+                            <img src="./images/frank.jpg" class="card-img-top" alt="Song 1">
                             <div class="card-body">
                                 <h6 class="card-title">Chanel</h6>
                                 <p class="card-text">Frank Ocean</p>
                                 <!-- Play Button -->
-                            </p> <button class="btn btn-success btn-sm" onclick="playSong('/songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', '/images/frank.jpg')">Play</button>
+                            </p> <button class="btn btn-success btn-sm" onclick="playSong('./songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', './images/frank.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card bg-dark text-white">
-                            <img src="/images/mr.morale.jpg" class="card-img-top" alt="Song 2">
+                            <img src="./images/mr.morale.jpg" class="card-img-top" alt="Song 2">
                             <div class="card-body">
                                 <h6 class="card-title">Count Me Out</h6>
                                 <p class="card-text">Kendrick Lamar</p>
                                 <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('/songs/Kendrick Lamar - Count Me Out.mp3', 'Count Me Out', 'Kendrick Lamar', '/images/mr.morale.jpg')">Play</button>
+                                    onclick="playSong('./songs/Kendrick Lamar - Count Me Out.mp3', 'Count Me Out', 'Kendrick Lamar', './images/mr.morale.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card bg-dark text-white">
-                            <img src="/images/onecall.jpg" class="card-img-top" alt="Song 3">
+                            <img src="./images/onecall.jpg" class="card-img-top" alt="Song 3">
                             <div class="card-body">
                                 <h6 class="card-title">One Call</h6>
                                 <p class="card-text">Rich Amiri</p>
                                 <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('/songs/Rich Amiri - One Call.mp3', 'One Call', 'Rich Amiri', '/images/onecall.jpg')">Play</button>
+                                    onclick="playSong('./songs/Rich Amiri - One Call.mp3', 'One Call', 'Rich Amiri', './images/onecall.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card bg-dark text-white">
-                            <img src="/images/rydcover.jpg" class="card-img-top" alt="Song 4">
+                            <img src="./images/rydcover.jpg" class="card-img-top" alt="Song 4">
                             <div class="card-body">
                                 <h6 class="card-title">Ryd</h6>
                                 <p class="card-text">Steve Lacy</p>
                                 <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('/songs/Ryd.mp3', 'Ryd', 'Steve Lacy', '/images/rydcover.jpg')">Play</button>
+                                    onclick="playSong('./songs/Ryd.mp3', 'Ryd', 'Steve Lacy', './images/rydcover.jpg')">Play</button>
                             </div>
                         </div>
                     </div>
@@ -158,7 +147,7 @@
                 <div class="container d-flex align-items-center justify-content-between">
                     <!-- Now Playing Info -->
                     <div class="d-flex align-items-center">
-                        <img id="nowPlayingImage" src="/images/frank.jpg" alt="Now Playing" class="rounded me-3"
+                        <img id="nowPlayingImage" src="./images/frank.jpg" alt="Now Playing" class="rounded me-3"
                             style="width: 50px; height: 50px;">
                         <div>
                             <p id="nowPlayingTitle" class="mb-0">Chanel</p>
@@ -201,13 +190,13 @@
             </div>
 
             <!-- Audio Player Element -->
-            <audio id="audioPlayer" src="/songs/Chanel - Frank Ocean.mp3" ontimeupdate="updateScrubber()"></audio>
+            <audio id="audioPlayer" src="./songs/Chanel - Frank Ocean.mp3" ontimeupdate="updateScrubber()"></audio>
 
             <!-- Right Content (Artist and Album Info) -->
             <div class="col-lg-2 col-md-3 col-sm-4 right-content">
                 <div class="d-flex flex-column align-items-center">
                     <!-- The album art and text will be updated dynamically -->
-                    <img id="albumArt" src="/images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
+                    <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
                     <h6 id="artistName">Play a Song!</h6>
                     <p id="artistBio" class="text">
                     </p>
