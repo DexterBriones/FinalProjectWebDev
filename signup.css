@@ -219,6 +219,11 @@ form.sign-up-form {
     cursor: pointer;
 }
 
+.btn.transparent:hover {
+    color: #4481eb;
+    border-color: #4481eb;
+}
+
 .image {
     width: 100%;
     transition: 0.9s 0.6s ease-in-out;
