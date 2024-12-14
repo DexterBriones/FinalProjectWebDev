@@ -37,13 +37,23 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" maxlength="20" required>
                     </div>
-                    <button class="btn transparent" id="sign-up-btn" onclick="loginwebsite">Sign-Up</button>
+                    <button class="btn transparent" id="sign-up-btn" target="_blank" rel="noopener noreferrer"
+                        onclick="loginwebsite()">Sign-Up</button>
                     <script>
                         function loginwebsite() {
-                            alert("Succesfully created an Account!");
-                            window.location.href = "login.html"
+                            const isAccountCreated = confirm("Have you completed creating your account?");
+
+                            if (isAccountCreated) {
+                                alert("Successfully created an Account!");
+                                setTimeout(() => {
+                                    window.location.href = "login.html";
+                                }, 2000);
+                            } else {
+                                alert("Please create an account before proceeding to the login page.");
+                            }
                         }
                     </script>
+
                     <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
                         <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer"
@@ -83,6 +93,7 @@
                 <p> Your next favorite song is just a click away. Sign up to explore playlists, discover fresh tracks,
                     and let the music bring your world to life. Let’s get started!</p>
                 <a href="login.html"><button class="btn transparent" id="sign-up-btn">Login</button></a>
+                <p>Already have an account? Click 'Login' to start listening to your favorite tunes</p>
             </div>
         </div>
     </div>
