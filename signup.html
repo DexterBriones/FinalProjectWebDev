@@ -38,18 +38,36 @@
                         <input type="password" placeholder="Password" maxlength="20" required>
                     </div>
                     <button class="btn transparent" id="sign-up-btn" onclick="loginwebsite">Sign-Up</button>
+                    <script>
+                        function loginwebsite() {
+                            alert("Succesfully created an Account!");
+                            window.location.href = "login.html"
+                        }
+                    </script>
                     <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <a href="https://www.facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer"
+                            onclick="redirectToLogin()">
                             <i class="fa brands fa-facebook"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="https://accounts.google.com" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" onclick="redirectToLogin()">
                             <i class="fab fa-google"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="https://www.apple.com" class="social-icon" target="_blank" rel="noopener noreferrer"
+                            onclick="redirectToLogin()">
                             <i class="fab fa-apple"></i>
                         </a>
                     </div>
+
+                    <script>
+                        function redirectToLogin() {
+                            setTimeout(() => {
+                                window.location.href = "login.html";
+                            }, 2000);
+                        }
+                    </script>
+
                 </form>
             </div>
         </div>
@@ -71,12 +89,6 @@
 
     <script src="signup.js" defer></script>
 
-    <script>
-        function loginwebsite() {
-            alert("Succesfully created an Account!");
-            window.location.href = 'login.html';
-        }
-    </script>
 </body>
 
 </html>
