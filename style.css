@@ -42,3 +42,25 @@ body {
     object-fit: cover;
 }
 
+
+
+.modal-body {
+    background-color: #1db954; 
+    color: #fff; /* Light grey font color */
+    font-family: 'Helvetica Neue', sans-serif; /* Modern font */
+    font-size: 16px; /* Standard font size */
+    line-height: 1.5; /* Improved readability */
+    padding: 20px; /* Add some padding */
+    border-radius: 1px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Optional: Add some hover effect for a more dynamic feel */
+.modal-body:hover {
+    background-color: #1db954; /* Slightly lighter background when hovering */
+    cursor: pointer; /* Change cursor on hover */
+}
+.modal-content {
+    background-color: #1db954;
+}

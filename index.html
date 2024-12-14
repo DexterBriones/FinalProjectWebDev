@@ -66,26 +66,13 @@
         </div>
     </nav>
 
-
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-lg-2 col-md-3 col-sm-4 sidebar d-flex flex-column p-3">
-                <h6>Recents</h6>
-                <ul class="list-unstyled">
-                    <li class="mt-2">
-                        <a href="likedsongs.html">
-                            <img src="./images/likedsongspicture.jpg" alt="Playlist" width="30" class="me-2">
-                            Liked Songs 
-                        </a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="index.html">
-                            <img src="./images/homeicon.png" alt="Artist" width="30" class="me-2">
-                            Recommended For You
-                        </a>
-                    </li>
-                </ul>
+            <div class="col-lg-2 col-md-3 col-sm-4 sidebar d-flex flex-column align-items-center p-3">
+                <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
+                <h6 id="artistName">Play a Song!</h6>
+                <p id="artistBio" class="text"></p>
             </div>
 
             <!-- Main Content -->
@@ -100,7 +87,7 @@
                                 <h6 class="card-title">Chanel</h6>
                                 <p class="card-text">Frank Ocean</p>
                                 <!-- Play Button -->
-                                <button id="playButton" class="btn btn-success btn-sm" onclick="playSong('./songs/Chanel - Frank Ocean.mp3', 'Chanel', 'Frank Ocean', './images/frank.jpg')">Play</button>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Play</button>
                             </div>
                         </div>
                     </div>
@@ -110,8 +97,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Count Me Out</h6>
                                 <p class="card-text">Kendrick Lamar</p>
-                                <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('./songs/Kendrick Lamar - Count Me Out.mp3', 'Count Me Out', 'Kendrick Lamar', './images/mr.morale.jpg')">Play</button>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Play</button>
                             </div>
                         </div>
                     </div>
@@ -121,8 +107,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">One Call</h6>
                                 <p class="card-text">Rich Amiri</p>
-                                <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('./songs/Rich Amiri - One Call.mp3', 'One Call', 'Rich Amiri', './images/onecall.jpg')">Play</button>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Play</button>
                             </div>
                         </div>
                     </div>
@@ -132,75 +117,43 @@
                             <div class="card-body">
                                 <h6 class="card-title">Ryd</h6>
                                 <p class="card-text">Steve Lacy</p>
-                                <button id="playButton" class="btn btn-success btn-sm"
-                                    onclick="playSong('./songs/Ryd.mp3', 'Ryd', 'Steve Lacy', './images/rydcover.jpg')">Play</button>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Play</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Playback Bar -->
-            <div class="playback-bar py-3 bg-dark text-white fixed-bottom">
-                <div class="container d-flex align-items-center justify-content-between">
-                    <!-- Now Playing Info -->
-                    <div class="d-flex align-items-center">
-                        <img id="nowPlayingImage" src="./images/frank.jpg" alt="Now Playing" class="rounded me-3"
-                            style="width: 50px; height: 50px;">
-                        <div>
-                            <p id="nowPlayingTitle" class="mb-0">Chanel</p>
-                            <small id="nowPlayingArtist" class="text">Frank Ocean</small>
-                            <button id="likeButton" class="btn btn-dark me-2" onclick="toggleLike()">♡</button>
-
-                        </div>
-                    </div>
-
-                    <!-- Playback Controls -->
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="d-flex align-items-center">
-                            <!-- Shuffle Button -->
-
-                            <button class="btn btn-dark me-2">
-                                <i class="bi bi-shuffle"></i>
-                            </button>
-                            <!-- Previous Button -->
-                            <button id="prevButton" class="btn btn-dark me-2">⏮</button>
-                            <!-- Play/Pause Button -->
-                            <button id="playPauseButton" class="btn btn-success me-2" onclick="togglePlay()">⏯</button>
-                            <!-- Next Button -->
-                            <button id="nextButton" class="btn btn-dark me-2">⏭</button>
-                            <!-- Repeat Button -->
-                            <button class="btn btn-dark ms-2">
-                                <i class="bi bi-arrow-repeat"></i>
-                            </button>
-                        </div>
-                        <!-- Music Scrubber -->
-                        <input id="musicScrubber" type="range" class="form-range mt-2" min="0" max="100" value="0"
-                            style="width: 300px;" oninput="seekAudio(this.value)">
-                    </div>
-        <!-- Volume Control -->
-        <div class="d-flex align-items-center">
-            <button class="btn btn-dark me-2">🔊</button>
-            <input type="range" class="form-range" style="width: 100px;" onchange="changeVolume(this.value)">
+            <!-- Right Content -->
+            <div class="col-lg-2 col-md-3 col-sm-4 right-content d-flex flex-column align-items-center">
+                <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
+                <h6 id="artistName">Play a Song!</h6>
+                <p id="artistBio" class="text"></p>
+            </div>
         </div>
     </div>
-</div>
 
-            <!-- Audio Player Element -->
-            <audio id="audioPlayer" src="./songs/Chanel - Frank Ocean.mp3"></audio>
-
-<!-- Right Content (Artist and Album Info) -->
-<div class="col-lg-2 col-md-3 col-sm-4 right-content">
-    <div class="d-flex flex-column align-items-center">
-        <!-- The album art and text will be updated dynamically -->
-        <img id="albumArt" src="./images/spotifyalbumart.webp" alt="album art" class="album-artwork mb-3">
-        <h6 id="artistName">Play a Song!</h6>
-        <p id="artistBio" class="text"></p>
+    <!-- Authentication Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Authentication Required</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Please sign up or log in to play this song.
+                </div>
+                <div class="modal-footer">
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                    <a href="login.html" class="btn btn-secondary">Log In</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-
-            <script src="script.js"></script>
-            <script src="login.js"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
+
 </html>
